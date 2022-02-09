@@ -79,7 +79,7 @@ class Jumper:
         '''
 
         does_live = self._boolean_value
-        return does_live 
+        return does_live      # simply returns the value of the boolean value each time the is_alive method... If the jumper is alive or dead
 
 
 
