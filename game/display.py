@@ -92,11 +92,9 @@ class Display:
         #for every letter in word if that letter is also in guessed_letters then it gets printed, 
         # if not a ‘_’ is printed in its place.
         for letter in word:
-            if letter == guessed_letter:
-                print(letter)
-            elif letter not in guessed_letter:
-                print("_") 
+            if letter in guessed_letter:
+                print(letter) 
             else:
-                print("You have chosen that letter already!")
+                print("_")
         
 
