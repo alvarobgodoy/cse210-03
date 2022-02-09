@@ -18,7 +18,7 @@ class Director:
     '''
     
 
-    def _do_updates():
+    def _do_updates(self):
         self._ran_word = self._word.get_random_word()
         self._guessed_letters = self._word.get_guessed_letters()
 
@@ -39,6 +39,6 @@ class Director:
             self._keep_playinh = False        
         
 
-    def _do_outputs():
+    def _do_outputs(self):
         self._display.print_word_so_far(self._word, self._guessed_letters)
         self._display.print_jumper(self._jumper.get_jumper())
