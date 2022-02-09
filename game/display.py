@@ -1,87 +1,10 @@
-guessed_letter = []
-shots = 5
-
 class Display:
     
     """The display provides the output for the jumper game"""
+    
     def print_jumper(jumper): #Prints the jumper according to the quantity of attempts remaining.
-        if shots == 5:
-            print("""
-                    _____
-                   /_____\
-                   \     /
-                    \   /
-                     \_/
-                      O
-                     /|\
-                     / \
-
-                    ^^^^^^
-            """)
-
-        if shots == 4:
-            print("""
-                    
-                   /_____\
-                   \     /
-                    \   /
-                     \_/
-                      O
-                     /|\
-                     / \
-                          
-                    ^^^^^^
-            """)
-        
-        if shots == 3:
-            print("""
-
-                   ______
-                   \     /
-                    \   /
-                     \_/
-                      O
-                     /|\
-                     / \
-                          
-                    ^^^^^^
-            """)
-        
-        if shots == 2:
-            print("""
-
-                    \   /
-                     \_/
-                      O
-                     /|\
-                     / \
-
-                    ^^^^^^
-            """)
-
-        if shots == 1:
-            print("""
-
-                     \_/
-                      O
-                     /|\
-                     / \
-
-                    ^^^^^^
-            
-            
-            """)
-        if shots == 0:
-            print("""
-
-                     \ 0 /
-                       |
-                      / \    
-
-                    ^^^^^^
-            
-            
-            """)
+       for line in jumper:
+            print(line)
 
 
     def get_letter(letter): #Prints the message to get a letter from the user.
@@ -92,11 +15,9 @@ class Display:
         #for every letter in word if that letter is also in guessed_letters then it gets printed, 
         # if not a ‘_’ is printed in its place.
         for letter in word:
-            if letter == guessed_letter:
-                print(letter)
-            elif letter not in guessed_letter:
-                print("_") 
+            if letter in guessed_letter:
+                print(letter) 
             else:
-                print("You have chosen that letter already!")
+                print("_")
         
 
