@@ -8,5 +8,5 @@ class Word:
 
     def get_random_word(self):
         #This function will return a random word from the list
-        self._index = randint(0, 6)
-        return self._word[self._index]
+        index = randint(0, len(self._word) - 1)
+        return self._word[index]
