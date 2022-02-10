@@ -4,7 +4,7 @@ class Word:
 
     def __init__(self):
         #This is the list and we will use only one word at a time.
-        self._word = ["blue", "green", "orange", "black", "purple", "Brown"] 
+        self._word = ["blue", "green", "orange", "black", "purple", "brown"] 
 
     def get_random_word(self):
         #This function will return a random word from the list
