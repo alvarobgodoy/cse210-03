@@ -17,6 +17,14 @@ class Director:
         _keep_playing (boolean): Wheter the game continues or not.
     '''
     
+    def _init_(self):
+        self._jumper = Jumper()
+        self._word = Word()
+        self._display = Display()
+        self._user_letter = ''
+        self._ran_word = ''
+        self._guessed_letters = ''
+        self._is_alive= True
 
     def _do_updates(self):
         self._ran_word = self._word.get_random_word()
@@ -37,8 +45,21 @@ class Director:
         if not self._jumper.is_alive():
             # If the jumper is dead the game ends. Player losses
             self._keep_playinh = False        
+
+    def start_game(self):
+        '''Contains the main loop used to start the game.
         
+        Args:
+            self (Director): an instance of Director.
+        '''
+        while self.is_playing:
+            self._do_inputs()
+            self._do_outputs()
+            self._do_updates()      
 
     def _do_outputs(self):
         self._display.print_word_so_far(self._word, self._guessed_letters)
         self._display.print_jumper(self._jumper.get_jumper())
+
+    def _do_inputs(self):
+        self._display.get_letter(self._user_letter)
